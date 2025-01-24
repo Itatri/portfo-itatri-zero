@@ -1,0 +1,48 @@
+.experiences {
+  padding: 5rem 10%;
+}
+
+
+
+.experience-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.experience-box {
+  background: #323946;
+  border-radius: 2rem;
+  padding: 2rem;
+  transition: .5s ease;
+}
+
+.experience-box:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 20px rgba(14, 255, 255, 0.2);
+}
+
+.experience-content {
+  padding: 1.5rem;
+}
+
+.year {
+  font-size: 1.7rem;
+  color: #b6ddfa;
+  padding-bottom: 1rem;
+}
+
+.year i {
+  margin-right: .5rem;
+}
+
+.experience-content h3 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.experience-content p {
+  font-size: 1.5rem;
+  margin-bottom: .5rem;
+  color: #ffffff;
+}
