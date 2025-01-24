@@ -1,0 +1,79 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+
+  <meta charset="utf-8">
+  <title>Itatri Portfolio</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+  <app-root></app-root>
+</body>
+</html>
+
+<!-- Note learn build Angular -->
+ <!-- 1. Cập nhật file src/index.html với các thẻ link CSS cần thiết: -->
+
+ <!-- 2. Tạo các components cần thiết: -->
+ <!-- ng generate component header -->
+ <!-- ng generate component home -->
+ <!-- ng generate component skills -->
+
+ <!-- 3. Cập nhật nội dung trong src/app/app.component.html -->
+ <!-- Bạn cần cập nhật file app.component.ts để import các components mới:
+  import { Component } from '@angular/core';
+  import { RouterOutlet } from '@angular/router';
+  import { HeaderComponent } from './header/header.component';
+  import { HomeComponent } from './home/home.component';
+  import { SkillsComponent } from './skills/skills.component';
+
+  @Component({
+    selector: 'app-root',
+    imports: [RouterOutlet, HeaderComponent, HomeComponent, SkillsComponent],
+    templateUrl: './app.component.html',
+    styleUrl: './app.component.css',
+    standalone: true
+  })
+  export class AppComponent {
+    title = 'Portfolio_Itatri_01_Angular';
+  }
+  -->
+ <!-- Sau đổ thêm vào app.component.html :
+      <app-header></app-header>
+      <app-home></app-home>
+      <app-skills></app-skills> -->
+
+
+<!-- 4. Di chuyển các phần tương ứng của mã HTML vào các components:
+    Header section vào header.component.html
+    Home section vào home.component.html
+    Skills section vào skills.component.html -->
+
+<!-- 5. Tạo file CSS chung trong src/styles.css và copy các styles từ style.css của bạn vào đó -->
+
+<!-- 6. Đối với các hình ảnh:
+Tạo thư mục src/assets
+Copy tất cả hình ảnh vào thư mục assets
+Cập nhật đường dẫn trong code thành /assets/ten-file.png -->
+
+<!-- 7. Cập nhật routes trong src/app/app.routes.ts:
+import { Routes } from '@angular/router';
+import { HomeComponent } from './home/home.component';
+import { SkillsComponent } from './skills/skills.component';
+
+export const routes: Routes = [
+  { path: '', component: HomeComponent },
+  { path: 'skills', component: SkillsComponent }
+];
+-->
+
+<!-- 8. Để chạy project Angular lên, thực hiện lệnh sau trong terminal tại thư mục gốc của project:
+     ng serve -->
+
+ <!-- Lệnh tạo file
+  mkdir public/assets/Avatar ( Tài nguyên ảnh thì để trong public/assets/... )
+ -->
