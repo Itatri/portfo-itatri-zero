@@ -89,20 +89,17 @@
 
 @keyframes words
 {
-    0%, 20%{
+    0%, 25%{
         content: "Web Developer";
     }
-    21%, 40%{
+    26%, 50%{
         content: "Designer";
     }
-    41%, 60%{
+    51%, 75%{
         content: "Photographer";
     }
-    61%, 80%{
+    76%, 100%{
         content: "Video Editor";
-    }
-    81%, 100%{
-        content: "_________";
     }
 }
 
