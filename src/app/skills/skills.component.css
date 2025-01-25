@@ -1,0 +1,48 @@
+
+/* CSS Skills page */
+.skills {
+  min-height: 100vh;
+  padding: 70px 10%;
+}
+
+
+.skills-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.skills-box {
+  padding: 2rem;
+  text-align: center;
+  background: #1f242d;
+  border-radius: 2rem;
+  border: .2rem solid #323946;
+  transition: .5s ease;
+}
+
+.skills-box:hover {
+  border-color: #6EACDA;
+  transform: scale(1.02);
+}
+
+.skills-box i {
+  font-size: 7rem;
+  color: #6EACDA;
+  margin-bottom: 1rem;
+}
+
+.skills-box h3 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.skills-box p {
+  font-size: 1.6rem;
+  line-height: 1.6;
+}
+
+.custom-icon {
+  width: 60px;
+  height: 60px;
+}
