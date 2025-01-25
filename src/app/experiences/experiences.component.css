@@ -40,7 +40,24 @@
 .experience-content h3 {
   font-size: 1.5rem;
   margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Add this to separate text and logo */
+  gap: 15px; /* Increase gap slightly */
 }
+
+.experience-content h3 img {
+  height: 3.5rem; /* Slightly larger logo */
+  width: auto;
+  object-fit: contain; /* Ensures logo maintains aspect ratio */
+  margin-left: auto; /* Pushes logo to the right */
+}
+
+/* Add this new class for better text wrapping */
+.experience-content h3 span {
+  flex: 1;
+}
+
 
 .experience-content p {
   font-size: 1.3rem;
