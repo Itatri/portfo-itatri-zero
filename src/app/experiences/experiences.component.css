@@ -46,7 +46,7 @@
 }
 
 .experience-content h3 img {
-  height: 3rem;
+  height: 2.5rem;
   width: auto;
   object-fit: contain;
   flex-shrink: 0; /* Prevents logo from shrinking */
