@@ -1,7 +1,6 @@
 
 header{
   margin-top: 20px;
-  /* position: fixed; */
   top: 0;
   left: 0;
   width: 100%;
@@ -47,9 +46,6 @@ nav a.active{
       top: 100%;
       right: 0;
       width: 40%;
-      border-left: 3px solid #6EACDA;
-      border-bottom: 3px solid #6EACDA;
-      border-bottom-left-radius: 2rem;
       padding: 1rem solid;
       background-color: black;
       border-top: 0.1rem solid rgba(0, 0, 0, 0.2);
@@ -71,5 +67,23 @@ nav a.active{
     padding: 1rem ;
     border-radius: 0.5rem;
       border-bottom: 0.5rem solid #6EACDA;
+  }
+}
+
+
+.menu-icon {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .menu-icon {
+    display: block;
+  }
+
+  nav {
+    display: none;
+
   }
 }
