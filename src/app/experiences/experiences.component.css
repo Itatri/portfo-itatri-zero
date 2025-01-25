@@ -29,7 +29,7 @@
 
 .year {
   font-size: 1.7rem;
-  color: #b6ddfa;
+  color: #6EACDA;
   padding-bottom: 1rem;
 }
 
@@ -42,25 +42,40 @@
   margin-bottom: 1rem;
   display: flex;
   align-items: center;
-  justify-content: space-between; /* Add this to separate text and logo */
-  gap: 15px; /* Increase gap slightly */
+  gap: 1.5rem; /* Space between logo and text */
 }
 
 .experience-content h3 img {
-  height: 3.5rem; /* Slightly larger logo */
+  height: 3rem;
   width: auto;
-  object-fit: contain; /* Ensures logo maintains aspect ratio */
-  margin-left: auto; /* Pushes logo to the right */
+  object-fit: contain;
+  flex-shrink: 0; /* Prevents logo from shrinking */
 }
 
-/* Add this new class for better text wrapping */
 .experience-content h3 span {
   flex: 1;
 }
+
 
 
 .experience-content p {
   font-size: 1.3rem;
   margin-bottom: .5rem;
   color: #ffffff;
+}
+
+.position-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.company {
+  font-size: 1.5rem;
+  color: #fff;
+}
+
+.position {
+  font-size: 1.3rem;
+  color: #6EACDA;
 }
