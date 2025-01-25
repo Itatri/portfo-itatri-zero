@@ -1,10 +1,15 @@
 <!-- Thanh navbar -->
+
 <header>
   <a href="index.html" class="logo">TRI$72</a>
 
-  <nav>
-      <a href="index.html" class="active">Home</a>
-      <a href="#skills">Skills</a>
-      <a href="#experiences">Experiences</a>
+  <div class="menu-icon" (click)="toggleMenu()">
+    <i class="fas fa-bars"></i>
+  </div>
+
+  <nav [class.show-menu]="isMenuOpen">
+    <a href="index.html" class="active">Home</a>
+    <a href="#skills">Skills</a>
+    <a href="#experiences">Experiences</a>
   </nav>
 </header>
