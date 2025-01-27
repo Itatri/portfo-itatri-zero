@@ -8,8 +8,9 @@
   </div>
 
   <nav [class.show-menu]="isMenuOpen">
-    <a href="index.html" class="active">Home</a>
-    <a href="#skills">Skills</a>
-    <a href="#experiences">Experiences</a>
+    <a href="index.html" class="active" (click)="toggleMenu()">Home</a>
+    <a href="#skills" (click)="toggleMenu()">Skills</a>
+    <a href="#experiences" (click)="toggleMenu()">Experiences</a>
   </nav>
 </header>
+

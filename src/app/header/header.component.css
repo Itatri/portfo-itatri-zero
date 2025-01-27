@@ -41,25 +41,25 @@ nav a.active{
 
 @media (max-width: 995px){
   nav{
-      position: absolute;
-      display: none;
-      top: 100%;
-      right: 0;
-      width: 40%;
-      padding: 1rem solid;
-      background-color: black;
-      border-top: 0.1rem solid rgba(0, 0, 0, 0.2);
+    position: absolute;
+    display: none;
+    top: 70px;
+    right: 9%;
+    width: 40%;
+    padding: 1rem;
+    background-color: black;
+    border-top: 0.1rem solid rgba(0, 0, 0, 0.2);
+    z-index: 1000; /* Thêm z-index cao hơn để hiển thị trên cùng */
   }
 
   nav.active{
       display: block;
   }
 
-  nav a{
-      display: block;
-      font-size: 2rem;
-      margin: 3rem 0;
-
+  nav a {
+    display: block;  /* Hiển thị các link theo chiều dọc */
+    font-size: 2rem;
+    margin: 3rem 0;
   }
 
   nav a:hover,
@@ -79,11 +79,14 @@ nav a.active{
 
 @media screen and (max-width: 768px) {
   .menu-icon {
-    display: block;
+    display: block;  /* Hiển thị icon hamburger khi màn hình < 768px */
   }
 
   nav {
-    display: none;
-
+    display: none;  /* Ẩn navigation mặc định */
   }
+}
+
+nav.show-menu {
+  display: block;
 }
