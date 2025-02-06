@@ -1,0 +1,53 @@
+/* Postion footer */
+.footer {
+  background: var(--bg-color);
+  padding: 3rem 9%;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.footer .text {
+  font-size: 1.8rem;
+  color: var(--text-color);
+  margin: 1.5rem;
+  position: relative;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+/* Css mui ten dieu huong ve trang dau  */
+.footer .arrow {
+  position: fixed;
+  bottom: 3rem;
+  right: 3rem;
+  height: 5rem;
+  width: 5rem;
+  line-height: 5rem;
+  font-size: 2.2rem;
+  background: var(--main-color);
+  color: var(--white-color);
+  border-radius: 50%;
+  text-align: center;
+  z-index: 1000;
+  transition: all 0.3s ease;
+  animation: float 2s ease-in-out infinite;
+}
+/* Hiệu ứng nổi lên xuống cho mũi tên */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+
+/* Media query cho màn hình nhỏ */
+@media (max-width: 450px) {
+  .footer {
+      padding: 2rem;
+  }
+  .footer .social a {
+      height: 4rem;
+      width: 4rem;
+      line-height: 4rem;
+      font-size: 1.8rem;
+  }
+}
