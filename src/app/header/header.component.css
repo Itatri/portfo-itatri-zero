@@ -5,7 +5,7 @@ header{
   left: 0;
   width: 100%;
   padding: 1rem 9%;
-  background-color: transparent;
+  background-color: var(--bg-color);
   filter: drop-shadow(10px);
   display: flex;
   justify-content: space-between;
@@ -16,7 +16,7 @@ header{
 .logo{
   font-size: 3rem;
   font-weight: 800;
-  color: #6EACDA;
+  color: var(--nav-text-color);
   cursor: pointer;
   transition: 0.5s ease;
 }
@@ -26,7 +26,7 @@ header{
 
 nav a{
   font-size: 1.8rem;
-  color: white;
+  color: var(--nav-text-color);
   font-weight: 500;
   margin-left: 3.5rem;
   transition: 0.5s ease;
@@ -35,8 +35,8 @@ nav a{
 
 nav a:hover,
 nav a.active{
-  color: #6EACDA;
-  border-bottom: 3px solid #6EACDA;
+  color: var(--nav-text-active);
+  border-bottom: 3px solid var(--nav-text-active);
 }
 
 @media (max-width: 995px){
@@ -66,7 +66,7 @@ nav a.active{
   nav a.active{
     padding: 1rem ;
     border-radius: 0.5rem;
-      border-bottom: 0.5rem solid #6EACDA;
+      border-bottom: 0.5rem solid var(--nav-text-active);
   }
 }
 
@@ -201,3 +201,6 @@ nav.show-menu {
 .input:checked + .slider:before {
   transform: translateX(30px);
 }
+
+
+

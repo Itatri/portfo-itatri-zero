@@ -9,7 +9,7 @@
 
 .footer .text {
   font-size: 1.8rem;
-  color: var(--text-color);
+  color: var(--footer-text-color);
   margin: 1.5rem;
   position: relative;
   text-transform: uppercase;

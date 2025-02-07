@@ -4,7 +4,7 @@
   align-items: center;
   justify-content: center;
   gap: 8rem;
-  background-color: black;
+  background-color: var(--bg-color);
 }
 
 .home .home-content h1{
@@ -23,7 +23,7 @@
 }
 
 .home-content p a {
-  color: #ffffff;
+  color: var(--text-color);
   font-weight: bold;
 }
 
@@ -38,7 +38,9 @@
   max-width: 600px; /* Add maximum width */
   height: auto; /* Maintain aspect ratio */
   border-radius: 50%;
-  box-shadow: 0 0 25px #6EACDA;
+  /* box-shadow: 0 0 25px #6EACDA; */
+  box-shadow: 0 0 25px var(--shadow-color);
+
   cursor: pointer;
   transition: 0.2s linear;
   object-fit: cover; /* Ensures image covers the container nicely */
@@ -56,16 +58,16 @@
 .typing-text span::before
 {
     content: "Web Developer";
-    color: #6EACDA;
+    color: var(--span-text-color);
     animation: words 15s infinite;
 }
 .typing-text span::after{
     content: "";
-    background-color: black;
+    background-color: transparent;
     position: absolute;
     width: calc(100% + 8px);
     height: 100%;
-    border-left: 3px solid black;
+    border-left: 3px solid var(--text-color);
     right: -8;
     animation: cursng 0.5s infinite;
 
@@ -87,21 +89,136 @@
     }
 }
 
-@keyframes words
-{
-    0%, 25%{
-        content: "Web Developer";
-    }
-    26%, 50%{
-        content: "Designer";
-    }
-    51%, 75%{
-        content: "Photographer";
-    }
-    76%, 100%{
-        content: "Video Editor";
-    }
+
+@keyframes words {
+  0%, 25% {
+      content: "W";
+  }
+  1% {
+      content: "We";
+  }
+  2% {
+      content: "Web";
+  }
+  3% {
+      content: "Web D";
+  }
+  4% {
+      content: "Web De";
+  }
+  5% {
+      content: "Web Dev";
+  }
+  6% {
+      content: "Web Deve";
+  }
+  7% {
+      content: "Web Devel";
+  }
+  8% {
+      content: "Web Develo";
+  }
+  9% {
+      content: "Web Develop";
+  }
+  10% {
+      content: "Web Develope";
+  }
+  11%, 25% {
+      content: "Web Developer";
+  }
+
+  26% {
+      content: "D";
+  }
+  27% {
+      content: "De";
+  }
+  28% {
+      content: "Des";
+  }
+  29% {
+      content: "Desi";
+  }
+  30% {
+      content: "Desig";
+  }
+  31%, 50% {
+      content: "Designer";
+  }
+
+  51% {
+      content: "P";
+  }
+  52% {
+      content: "Ph";
+  }
+  53% {
+      content: "Pho";
+  }
+  54% {
+      content: "Phot";
+  }
+  55% {
+      content: "Photo";
+  }
+  56% {
+      content: "Photog";
+  }
+  57% {
+      content: "Photogr";
+  }
+  58% {
+      content: "Photogra";
+  }
+  59% {
+      content: "Photograp";
+  }
+  60% {
+      content: "Photograph";
+  }
+  61% {
+      content: "Photographe";
+  }
+  62%, 75% {
+      content: "Photographer";
+  }
+
+  76% {
+      content: "V";
+  }
+  77% {
+      content: "Vi";
+  }
+  78% {
+      content: "Vid";
+  }
+  79% {
+      content: "Vide";
+  }
+  80% {
+      content: "Video";
+  }
+  81% {
+      content: "Video E";
+  }
+  82% {
+      content: "Video Ed";
+  }
+  83% {
+      content: "Video Edi";
+  }
+  84% {
+      content: "Video Edit";
+  }
+  85% {
+      content: "Video Edito";
+  }
+  86%, 100% {
+      content: "Video Editor";
+  }
 }
+
 
 @media (max-width: 1000px){
     .home{

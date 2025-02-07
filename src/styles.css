@@ -1,6 +1,36 @@
 /* Style chung của trang web */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 
+/* Định nghĩa các biến CSS trong styles.css để quản lý màu sắc */
+:root {
+  --bg-color: black;
+  --text-color: white;
+  --shadow-color: #6EACDA;
+  --btncolor: #6eabda1c;
+  --logo-color: #6EACDA;
+  --nav-text-color: #6EACDA;
+  --span-text-color: #6EACDA;
+  --nav-text-active: #6EACDA;
+  --social-icon-hover: #6EACDA;
+  --footer-text-color: white;
+
+}
+
+:root.light-theme {
+  --bg-color: #6da8d4;
+  --text-color: black;
+  --shadow-color: #332f2f;
+  --btncolor: black;
+  --logo-color: white;
+  --nav-text-color: white;
+  --span-text-color: black;
+  --nav-text-active: white;
+  --social-icon-hover: black;
+  --footer-text-color: white;
+
+
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -13,6 +43,7 @@
 
 html{
     font-size: 62.5%;
+    background-color: var(--bg-color);
 
 }
 
@@ -20,8 +51,26 @@ body{
     width: 100%;
     height: 100vh;
     /* overflow:hidden; */
-    background-color: black;
+    background-color: var(--bg-color);
     color: white;
+    transition: all 0.3s ease;
+
+}
+
+.btn
+{
+    display: inline-block;
+    padding: 1rem 2.8rem;
+    background-color: black;
+    color: rgb(255, 255, 255);
+
+    border-radius: 4rem;
+    font-size: 1.6rem;
+    letter-spacing: 0.3rem;
+    font-weight: 600;
+    border: 2px solid var(--btncolor);
+    transition: 0.3s ease;
+    cursor: pointer;
 }
 
 
@@ -33,7 +82,8 @@ section{
 
 
 span{
-    color: #6EACDA;
+    color: var(--span-text-color);
+    background-color: transparent;
 }
 
 .heading {
@@ -43,7 +93,7 @@ span{
 }
 
 .heading span {
-  color: #6EACDA;
+  color: var(--span-text-color);
 }
 
 
@@ -55,12 +105,12 @@ html {
 
 /* Thêm class mới để kích hoạt hover effect */
 .social-icons.active a {
-  color: #6EACDA;
+  color: var(--social-icon-hover);
   transform: translateY(-5px);
 }
 
 .social-icons.active a i {
-  color: #6EACDA;
+  color: var(--social-icon-hover);
 }
 
 
@@ -85,20 +135,8 @@ html {
 }
 
 .social-icons a:hover i {
-  color: #6EACDA;
+  color: var(--social-icon-hover);
 }
 
-.btn
-{
-    display: inline-block;
-    padding: 1rem 2.8rem;
-    background-color: black;
-    border-radius: 4rem;
-    font-size: 1.6rem;
-    color: rgb(255, 255, 255);
-    letter-spacing: 0.3rem;
-    font-weight: 600;
-    border: 2px solid #6EACDA;
-    transition: 0.3s ease;
-    cursor: pointer;
-}
+
+
