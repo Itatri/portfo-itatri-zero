@@ -1,10 +1,13 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { ThemeService } from '../services/theme.service';
 
 @Component({
   selector: 'app-footer',
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './footer.component.html',
-  styleUrl: './footer.component.css'
+  styleUrl: './footer.component.css',
+  providers: [ThemeService]
 })
 export class FooterComponent {
   // Event scroll to top of page
@@ -15,4 +18,16 @@ export class FooterComponent {
       behavior: 'smooth'
     });
   }
+
+
+   // Theme toggle Dark/Light
+    constructor(private themeService: ThemeService) {}
+
+    get isDarkTheme() {
+      return this.themeService.isDarkTheme$;
+    }
+
+    toggleTheme() {
+      this.themeService.toggleTheme();
+    }
 }

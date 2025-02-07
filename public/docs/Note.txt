@@ -62,3 +62,12 @@ export const routes: Routes = [
  <!-- Lệnh tạo file
   mkdir public/assets/Avatar ( Tài nguyên ảnh thì để trong public/assets/... )
  -->
+
+
+
+
+<!-- 9. Lệnh tạo services -->
+<!-- Tạo service dùng lệnh Angular CLI:
+ng generate service services/theme
+ -->
+

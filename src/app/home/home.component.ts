@@ -1,10 +1,14 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { ThemeService } from '../services/theme.service';
+
 
 @Component({
   selector: 'app-home',
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.css'
+  styleUrl: './home.component.css',
+  providers: [ThemeService]
 })
 export class HomeComponent {
   // Sự kiện nhấn nút Contact
@@ -16,5 +20,16 @@ export class HomeComponent {
       socialIcons.classList.remove('active');
     }, 2000);
   }
+
+    // Theme toggle Dark/Light
+      constructor(private themeService: ThemeService) {}
+
+      get isDarkTheme() {
+        return this.themeService.isDarkTheme$;
+      }
+
+      toggleTheme() {
+        this.themeService.toggleTheme();
+      }
 
 }
