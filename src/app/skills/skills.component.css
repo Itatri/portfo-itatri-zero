@@ -15,9 +15,9 @@
 .skills-box {
   padding: 2rem;
   text-align: center;
-  background: #1f242d;
+  background: var(--box-component-color);
   border-radius: 2rem;
-  border: .2rem solid #323946;
+  border: .2rem solid var(--box-component-border);
   transition: .5s ease;
 }
 

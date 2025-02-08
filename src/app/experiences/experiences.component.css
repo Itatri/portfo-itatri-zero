@@ -12,7 +12,7 @@
 }
 
 .experience-box {
-  background: #323946;
+  background: var(--box-component-color);
   border-radius: 2rem;
   padding: 2rem;
   transition: .5s ease;

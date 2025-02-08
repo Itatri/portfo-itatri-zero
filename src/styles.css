@@ -13,13 +13,15 @@
   --nav-text-active: #6EACDA;
   --social-icon-hover: #6EACDA;
   --footer-text-color: white;
+  --box-component-color: #191a1f;
+  --box-component-border: #323946;
 
 }
 
 :root.light-theme {
-  --bg-color: #6da8d4;
+  --bg-color: #4c98d3;
   --text-color: black;
-  --shadow-color: #332f2f;
+  --shadow-color: #97d6df;
   --btncolor: black;
   --logo-color: white;
   --nav-text-color: white;
@@ -27,6 +29,8 @@
   --nav-text-active: white;
   --social-icon-hover: black;
   --footer-text-color: white;
+  --box-component-color: #345b79;
+  --box-component-border: #5c8db3;
 
 
 }
