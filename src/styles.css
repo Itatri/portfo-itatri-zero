@@ -53,6 +53,7 @@
 html{
     font-size: 62.5%;
     background-color: var(--bg-color);
+
 }
 
 
@@ -63,7 +64,7 @@ body {
   height: 100vh;
   background-color: var(--bg-color);
   color: white;
-  transition: all 0.3s ease;
+  transition: all 0.1s ease;
 }
 
 .btn
