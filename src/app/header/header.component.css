@@ -77,7 +77,7 @@ nav a.active{
   cursor: pointer;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 995px) {
   .menu-icon {
     display: block;  /* Hiển thị icon hamburger khi màn hình < 768px */
   }

@@ -2,7 +2,15 @@
 <!-- Note: Id skills for Skill click event -->
 <section class="skills" id="skills">
   <h2 class="heading">My <span>Skills</span></h2>
-  <div class="skills-container">
+
+  <div class="carousel-controls">
+    <button class="arrow-btn prev" (click)="prevSkill()">
+      <i class="fas fa-chevron-left"></i>
+    </button>
+    <div class="skills-container"
+    (touchstart)="handleTouchStart($event)"
+    (touchend)="handleTouchEnd($event)">
+
       <div class="skills-box">
           <img src="assets/Icons/HTML.png" alt="HTML" class="custom-icon">
           <h3>HTML</h3>
@@ -62,5 +70,22 @@
           <h3>Figma</h3>
           <p>Introductory skills in UI/UX design and creating prototypes.</p>
       </div>
+    </div>
+    <button class="arrow-btn next" (click)="nextSkill()">
+    <i class="fas fa-chevron-right"></i>
+  </button>
+  </div>
+
+  <div class="skills-navigation">
+    <input type="radio" name="skill" [checked]="selectedSkillIndex === 0" (change)="selectSkill(0)" id="skill0">
+    <input type="radio" name="skill" [checked]="selectedSkillIndex === 1" (change)="selectSkill(1)" id="skill1">
+    <input type="radio" name="skill" [checked]="selectedSkillIndex === 2" (change)="selectSkill(2)" id="skill2">
+    <input type="radio" name="skill" [checked]="selectedSkillIndex === 3" (change)="selectSkill(3)" id="skill3">
+    <input type="radio" name="skill" [checked]="selectedSkillIndex === 4" (change)="selectSkill(4)" id="skill4">
+    <input type="radio" name="skill" [checked]="selectedSkillIndex === 5" (change)="selectSkill(5)" id="skill5">
+    <input type="radio" name="skill" [checked]="selectedSkillIndex === 6" (change)="selectSkill(6)" id="skill6">
+    <input type="radio" name="skill" [checked]="selectedSkillIndex === 7" (change)="selectSkill(7)" id="skill7">
+    <input type="radio" name="skill" [checked]="selectedSkillIndex === 8" (change)="selectSkill(8)" id="skill8">
+    <input type="radio" name="skill" [checked]="selectedSkillIndex === 9" (change)="selectSkill(9)" id="skill9">
   </div>
 </section>
