@@ -45,10 +45,6 @@
     font-family: 'Poppins', sans-serif;
 }
 
-html, body {
-  width: 100%;
-  overflow-x: hidden;
-}
 
 html{
     font-size: 62.5%;
@@ -56,11 +52,14 @@ html{
 }
 
 
-body{
-    height: 100vh;
-    background-color: var(--bg-color);
-    color: white;
-    transition: all 0.3s ease;
+
+body {
+  width: 100%;
+  overflow-x: hidden;
+  height: 100vh;
+  background-color: var(--bg-color);
+  color: white;
+  transition: all 0.3s ease;
 }
 
 .btn
