@@ -1,7 +1,14 @@
 /* CSS Experiences page */
 
 .experiences {
-  padding: 5rem 10%;
+    min-height: 50vh;
+    padding: 70px 10%;
+    perspective: 1000px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    overflow: hidden;
 }
 
 
