@@ -1,8 +1,48 @@
   /* CSS Skills page */
   .skills {
-    min-height: 100vh;
+    min-height: 50vh;
     padding: 70px 10%;
     perspective: 1000px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .heading {
+    text-align: center;
+    font-size: 4rem;
+    margin-bottom: 50px;
+    width: 100%;
+  }
+
+  .carousel-wrapper {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 100px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .skills-navigation {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+  }
+
+  @media (max-width: 480px) {
+    .skills {
+      padding: 50px 5%;
+    }
+
+    .carousel-wrapper {
+      width: 100%;
+      overflow: hidden;
+    }
   }
 
   .skills-container {
@@ -27,27 +67,19 @@
     transition: border-color 0.3s ease;
   }
 
-  .skills-box:hover {
-    border-color: #6EACDA;
-  }
-
-  /* Position each skills box in 3D space */
-  .skills-box:nth-child(1) { transform: rotateY(0deg) translateZ(400px); }
-  .skills-box:nth-child(2) { transform: rotateY(36deg) translateZ(400px); }
-  .skills-box:nth-child(3) { transform: rotateY(72deg) translateZ(400px); }
-  .skills-box:nth-child(4) { transform: rotateY(108deg) translateZ(400px); }
-  .skills-box:nth-child(5) { transform: rotateY(144deg) translateZ(400px); }
-  .skills-box:nth-child(6) { transform: rotateY(180deg) translateZ(400px); }
-  .skills-box:nth-child(7) { transform: rotateY(216deg) translateZ(400px); }
-  .skills-box:nth-child(8) { transform: rotateY(252deg) translateZ(400px); }
-  .skills-box:nth-child(9) { transform: rotateY(288deg) translateZ(400px); }
-  .skills-box:nth-child(10) { transform: rotateY(324deg) translateZ(400px); }
+  /* Giảm giá trị translateZ để box gần nhau hơn */
+  .skills-box:nth-child(1) { transform: rotateY(0deg) translateZ(420px); }
+  .skills-box:nth-child(2) { transform: rotateY(36deg) translateZ(420px); }
+  .skills-box:nth-child(3) { transform: rotateY(72deg) translateZ(420px); }
+  .skills-box:nth-child(4) { transform: rotateY(108deg) translateZ(420px); }
+  .skills-box:nth-child(5) { transform: rotateY(144deg) translateZ(420px); }
+  .skills-box:nth-child(6) { transform: rotateY(180deg) translateZ(420px); }
+  .skills-box:nth-child(7) { transform: rotateY(216deg) translateZ(420px); }
+  .skills-box:nth-child(8) { transform: rotateY(252deg) translateZ(420px); }
+  .skills-box:nth-child(9) { transform: rotateY(288deg) translateZ(420px); }
+  .skills-box:nth-child(10) { transform: rotateY(324deg) translateZ(420px); }
 
   /* Chỉ thay đổi màu viền khi hover */
-  .skills-box {
-    transition: border-color 0.3s ease;
-  }
-
   .skills-box:hover {
     border-color: #6EACDA;
   }
@@ -77,16 +109,16 @@
       height: 250px;
     }
 
-    .skills-box:nth-child(1) { transform: rotateY(0deg) translateZ(300px); }
-    .skills-box:nth-child(2) { transform: rotateY(36deg) translateZ(300px); }
-    .skills-box:nth-child(3) { transform: rotateY(72deg) translateZ(300px); }
-    .skills-box:nth-child(4) { transform: rotateY(108deg) translateZ(300px); }
-    .skills-box:nth-child(5) { transform: rotateY(144deg) translateZ(300px); }
-    .skills-box:nth-child(6) { transform: rotateY(180deg) translateZ(300px); }
-    .skills-box:nth-child(7) { transform: rotateY(216deg) translateZ(300px); }
-    .skills-box:nth-child(8) { transform: rotateY(252deg) translateZ(300px); }
-    .skills-box:nth-child(9) { transform: rotateY(288deg) translateZ(300px); }
-    .skills-box:nth-child(10) { transform: rotateY(324deg) translateZ(300px); }
+    .skills-box:nth-child(1) { transform: rotateY(0deg) translateZ(400px); }
+    .skills-box:nth-child(2) { transform: rotateY(36deg) translateZ(400px); }
+    .skills-box:nth-child(3) { transform: rotateY(72deg) translateZ(400px); }
+    .skills-box:nth-child(4) { transform: rotateY(108deg) translateZ(400px); }
+    .skills-box:nth-child(5) { transform: rotateY(144deg) translateZ(400px); }
+    .skills-box:nth-child(6) { transform: rotateY(180deg) translateZ(400px); }
+    .skills-box:nth-child(7) { transform: rotateY(216deg) translateZ(400px); }
+    .skills-box:nth-child(8) { transform: rotateY(252deg) translateZ(400px); }
+    .skills-box:nth-child(9) { transform: rotateY(288deg) translateZ(400px); }
+    .skills-box:nth-child(10) { transform: rotateY(324deg) translateZ(400px); }
   }
 
   /* Mobile */
@@ -101,16 +133,16 @@
       height: 200px;
     }
 
-    .skills-box:nth-child(1) { transform: rotateY(0deg) translateZ(200px); }
-    .skills-box:nth-child(2) { transform: rotateY(36deg) translateZ(200px); }
-    .skills-box:nth-child(3) { transform: rotateY(72deg) translateZ(200px); }
-    .skills-box:nth-child(4) { transform: rotateY(108deg) translateZ(200px); }
-    .skills-box:nth-child(5) { transform: rotateY(144deg) translateZ(200px); }
-    .skills-box:nth-child(6) { transform: rotateY(180deg) translateZ(200px); }
-    .skills-box:nth-child(7) { transform: rotateY(216deg) translateZ(200px); }
-    .skills-box:nth-child(8) { transform: rotateY(252deg) translateZ(200px); }
-    .skills-box:nth-child(9) { transform: rotateY(288deg) translateZ(200px); }
-    .skills-box:nth-child(10) { transform: rotateY(324deg) translateZ(200px); }
+    .skills-box:nth-child(1) { transform: rotateY(0deg) translateZ(300px); }
+    .skills-box:nth-child(2) { transform: rotateY(36deg) translateZ(300px); }
+    .skills-box:nth-child(3) { transform: rotateY(72deg) translateZ(300px); }
+    .skills-box:nth-child(4) { transform: rotateY(108deg) translateZ(300px); }
+    .skills-box:nth-child(5) { transform: rotateY(144deg) translateZ(300px); }
+    .skills-box:nth-child(6) { transform: rotateY(180deg) translateZ(300px); }
+    .skills-box:nth-child(7) { transform: rotateY(216deg) translateZ(300px); }
+    .skills-box:nth-child(8) { transform: rotateY(252deg) translateZ(300px); }
+    .skills-box:nth-child(9) { transform: rotateY(288deg) translateZ(300px); }
+    .skills-box:nth-child(10) { transform: rotateY(324deg) translateZ(300px); }
 
     .custom-icon {
       width: 40px;
@@ -126,7 +158,6 @@
     }
   }
   }
-
   .skills-box h3 {
     font-size: 2rem;
     margin-bottom: 1rem;

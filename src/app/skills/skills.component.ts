@@ -12,14 +12,12 @@ import { ThemeService } from '../services/theme.service';
 export class SkillsComponent {
 
         isRotating = true;
-        rotationSpeed = 20;
+        rotationSpeed = 50;
         selectedSkillIndex = 0;
         totalSkills = 10;
 
         touchStartX = 0;
         touchEndX = 0;
-
-
 
         constructor(private themeService: ThemeService) {}
         // Theme toggle Dark/Light
@@ -31,7 +29,7 @@ export class SkillsComponent {
           this.themeService.toggleTheme();
         }
 
-
+         // Event for roll skills-container
         selectSkill(index: number) {
           this.selectedSkillIndex = index;
           const container = document.querySelector('.skills-container') as HTMLElement;
@@ -77,7 +75,4 @@ export class SkillsComponent {
             }
           }
         }
-
-
-
 }
