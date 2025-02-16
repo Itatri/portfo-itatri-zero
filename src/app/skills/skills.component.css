@@ -223,13 +223,13 @@
     justify-content: center;
     position: absolute;
     top: 50%;
-    transform: translateY(-50%);
+    transform: translateY(-140%);
   }
 
   .arrow-btn:hover {
     background: #6EACDA;
     color: white;
-    transform: translateY(-50%) scale(1.1);
+    transform: translateY(-140%) scale(1.1);
   }
 
   .arrow-btn i {
@@ -237,11 +237,11 @@
   }
 
   .arrow-btn.prev {
-    left: -80px;
+    left: -100px;
   }
 
   .arrow-btn.next {
-    right: -80px;
+    right: -100px;
   }
 
 @media (max-width: 1050px) {
