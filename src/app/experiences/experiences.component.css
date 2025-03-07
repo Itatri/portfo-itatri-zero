@@ -1,88 +1,167 @@
 /* CSS Experiences page */
-
 .experiences {
-    min-height: 50vh;
-    padding: 70px 10%;
-    perspective: 1000px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    overflow: hidden;
+  min-height: 100vh;
+  padding: 70px 5%;
+  position: relative;
 }
 
-
-.experience-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
+.timeline {
+  position: relative;
+  max-width: 1200px;
+  margin: 50px auto;
+  padding: 20px;
 }
 
-.experience-box {
-  background: var(--box-component-color);
-  border-radius: 2rem;
-  padding: 2rem;
-  transition: .5s ease;
+.timeline::before {
+  content: '';
+  position: absolute;
+  width: 2px;
+  background: var(--main-color);
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
-.experience-box:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 0 20px rgba(14, 255, 255, 0.2);
+.timeline-item {
+  width: calc(50% - 40px);
+  margin-bottom: 50px;
+  position: relative;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.5s ease forwards;
 }
 
-.experience-content {
-  padding: 1.5rem;
+.timeline-item:nth-child(odd) {
+  float: left;
+  clear: both;
+  transform: translateX(-30px);
 }
 
-.year {
-  font-size: 1.7rem;
-  color: #6EACDA;
-  padding-bottom: 1rem;
+.timeline-item:nth-child(even) {
+  float: right;
+  clear: both;
+  transform: translateX(30px);
+}
+.timeline-content {
+  background: #191a1f;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 0 25px rgba(182, 179, 179, 0.2);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
 }
 
-.year i {
-  margin-right: .5rem;
+.timeline-content:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 25px rgba(var(--main-color-rgb), 0.3);
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--main-color);
 }
 
-.experience-content h3 {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
+.timeline::before {
+  content: '';
+  position: absolute;
+  width: 2px;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    var(--main-color),
+    transparent
+  );
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 0 15px var(--main-color);
+}
+
+.timeline-dot {
+  width: 16px;
+  height: 16px;
+  background: var(--main-color);
+  border-radius: 50%;
+  position: absolute;
+  right: -48px;
+  top: 20px;
+  box-shadow: 0 0 10px var(--main-color);
+  border: 2px solid var(--bg-color);
+}
+.timeline-item:nth-child(even) .timeline-dot {
+  left: -48px;
+}
+.timeline-date {
+  color: var(--main-color);
+  font-size: 0.9em;
+  margin-bottom: 10px;
   display: flex;
   align-items: center;
-  gap: 1.5rem; /* Space between logo and text */
+  gap: 8px;
 }
-
-.experience-content h3 img {
-  height: 2.5rem;
-  width: auto;
+.content-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+.content-header img {
+  width: 60px;
+  height: 60px;
+  border-radius: 10px;
   object-fit: contain;
-  flex-shrink: 0; /* Prevents logo from shrinking */
+  background: rgba(255, 255, 255, 0.05);
+  padding: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
-
-.experience-content h3 span {
+.position-details {
   flex: 1;
 }
-
-
-
-.experience-content p {
-  font-size: 1.3rem;
-  margin-bottom: .5rem;
-  color: #ffffff;
-}
-
-.position-details {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
 .company {
-  font-size: 1.5rem;
-  color: #fff;
+  font-size: 1.2em;
+  margin-bottom: 5px;
+  color: var(--text-color);
 }
-
 .position {
-  font-size: 1.3rem;
-  color: #6EACDA;
+  color: var(--main-color);
+  font-weight: 500;
+  font-size: 0.9em;
+}
+@keyframes fadeInUp {
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .timeline::before {
+      left: 30px;
+  }
+.timeline-item {
+      width: 100%;
+      padding-left: 60px;
+  }
+.timeline-item:nth-child(odd),
+  .timeline-item:nth-child(even) {
+      float: none;
+      clear: both;
+      transform: none;
+  }
+.timeline-dot {
+      left: 22px;
+      right: auto;
+  }
+.timeline-content {
+      padding: 15px;
+  }
+.content-header {
+      flex-direction: column;
+      align-items: flex-start;
+  }
+  .content-header img {
+      width: 50px;
+      height: 50px;
+      padding: 3px;
+  }
 }
