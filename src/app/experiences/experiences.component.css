@@ -1,88 +1,180 @@
 /* CSS Experiences page */
-
 .experiences {
-    min-height: 50vh;
-    padding: 70px 10%;
-    perspective: 1000px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    overflow: hidden;
+  min-height: 100vh;
+  padding: 70px 5%;
+  position: relative;
 }
 
-
-.experience-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
+.timeline {
+  position: relative;
+  max-width: 1200px;
+  margin: 50px auto;
+  padding: 20px;
 }
 
-.experience-box {
+.timeline::before {
+  content: '';
+  position: absolute;
+  width: 4px;  /* Increased from 2px to 4px */
+  height: 800px;
+  background: rgba(255, 255, 255, 0.2);
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.timeline-item {
+  width: calc(50% - 40px);
+  margin-bottom: 50px;
+  position: relative;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.5s ease forwards;
+}
+
+.timeline-item:nth-child(odd) {
+  float: left;
+  clear: both;
+  transform: translateX(-30px);
+}
+
+.timeline-item:nth-child(even) {
+  float: right;
+  clear: both;
+  transform: translateX(30px);
+}
+
+.timeline-content {
   background: var(--box-component-color);
-  border-radius: 2rem;
-  padding: 2rem;
-  transition: .5s ease;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 0 25px rgba(182, 179, 179, 0.2);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
 }
 
-.experience-box:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 0 20px rgba(14, 255, 255, 0.2);
+.timeline-content:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 25px rgba(var(--main-color-rgb), 0.3);
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--main-color);
 }
-
-.experience-content {
-  padding: 1.5rem;
+.timeline-dot {
+  width: 16px;
+  height: 16px;
+  background: #fff;  /* Changed from var(--main-color) to white */
+  border-radius: 50%;
+  position: absolute;
+  right: -48.5px;
+  top: 85px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);  /* Changed shadow color to match dot */
+  border: 2px solid rgba(255, 255, 255, 0.2);  /* Changed border color to semi-transparent white */
 }
-
-.year {
+.timeline-item:nth-child(even) .timeline-dot {
+  left: -48px;
+}
+.timeline-date {
+  color: var(--main-color);
   font-size: 1.7rem;
-  color: #6EACDA;
-  padding-bottom: 1rem;
-}
-
-.year i {
-  margin-right: .5rem;
-}
-
-.experience-content h3 {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
+  margin-bottom: 10px;
   display: flex;
   align-items: center;
-  gap: 1.5rem; /* Space between logo and text */
+  gap: 8px;
 }
-
-.experience-content h3 img {
-  height: 2.5rem;
-  width: auto;
+.content-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+.content-header img {
+  width: 60px;
+  height: 60px;
+  border-radius: 10px;
   object-fit: contain;
-  flex-shrink: 0; /* Prevents logo from shrinking */
+  background: rgba(255, 255, 255, 0.05);
+  padding: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
-
-.experience-content h3 span {
+.position-details {
   flex: 1;
 }
-
-
-
-.experience-content p {
-  font-size: 1.3rem;
-  margin-bottom: .5rem;
-  color: #ffffff;
-}
-
-.position-details {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
 .company {
   font-size: 1.5rem;
-  color: #fff;
+  color: var(--text-color);
+}
+.position {
+  color: var(--main-color);
+  font-size: 1.3rem;
+}
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .experiences {
+    padding: 50px 20px;  /* Reduced padding for mobile */
+  }
+  .timeline::before {
+    left: 30px;
+    height: 100%;  /* Make sure line spans full height */
+  }
+  .timeline-item {
+    width: 100%;
+    padding-left: 60px;
+    margin-bottom: 30px;  /* Reduced spacing between items */
+  }
+  .timeline-item:nth-child(odd),
+  .timeline-item:nth-child(even) {
+    float: none;
+    clear: both;
+    transform: none;
+    margin-left: 0;
+  }
+  .timeline-dot {
+    left: -74px !important;  /* Force override for both odd and even items */
+    right: auto;
+    top: 30px;  /* Adjusted to align with content */
+  }
+  .timeline-content {
+    padding: 15px;
+    margin-left: 15px;  /* Add some space from the timeline */
+  }
+  .content-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .content-header img {
+    width: 40px;  /* Smaller images on mobile */
+    height: 40px;
+    padding: 3px;
+  }
+  .company {
+    font-size: 1.2rem;  /* Smaller font size */
+  }
+  .position {
+    font-size: 1rem;  /* Smaller font size */
+  }
+  .timeline-date {
+    font-size: 1.3rem;  /* Smaller font size */
+  }
+  p {
+    font-size: 1rem !important;  /* Ensure readable text size */
+  }
 }
 
-.position {
-  font-size: 1.3rem;
-  color: #6EACDA;
+/* Add smaller screen adjustments */
+@media screen and (max-width: 480px) {
+  .experiences {
+    padding: 30px 15px;
+  }
+  .timeline-content {
+    padding: 12px;
+  }
 }
