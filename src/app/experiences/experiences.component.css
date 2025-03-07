@@ -15,8 +15,9 @@
 .timeline::before {
   content: '';
   position: absolute;
-  width: 2px;
-  background: var(--main-color);
+  width: 4px;  /* Increased from 2px to 4px */
+  height: 800px;
+  background: rgba(255, 255, 255, 0.2);
   top: 0;
   bottom: 0;
   left: 50%;
@@ -43,8 +44,9 @@
   clear: both;
   transform: translateX(30px);
 }
+
 .timeline-content {
-  background: #191a1f;
+  background: var(--box-component-color);
   padding: 20px;
   border-radius: 15px;
   box-shadow: 0 0 25px rgba(182, 179, 179, 0.2);
@@ -59,41 +61,24 @@
   background: rgba(255, 255, 255, 0.1);
   border-color: var(--main-color);
 }
-
-.timeline::before {
-  content: '';
-  position: absolute;
-  width: 2px;
-  background: linear-gradient(
-    to bottom,
-    transparent,
-    var(--main-color),
-    transparent
-  );
-  top: 0;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  box-shadow: 0 0 15px var(--main-color);
-}
-
 .timeline-dot {
   width: 16px;
   height: 16px;
-  background: var(--main-color);
+  background: #fff;  /* Changed from var(--main-color) to white */
   border-radius: 50%;
   position: absolute;
-  right: -48px;
-  top: 20px;
-  box-shadow: 0 0 10px var(--main-color);
-  border: 2px solid var(--bg-color);
+  right: -48.5px;
+  top: 85px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);  /* Changed shadow color to match dot */
+  border: 2px solid rgba(255, 255, 255, 0.2);  /* Changed border color to semi-transparent white */
+
 }
 .timeline-item:nth-child(even) .timeline-dot {
   left: -48px;
 }
 .timeline-date {
   color: var(--main-color);
-  font-size: 0.9em;
+  font-size: 1.7rem;
   margin-bottom: 10px;
   display: flex;
   align-items: center;
@@ -118,19 +103,81 @@
   flex: 1;
 }
 .company {
-  font-size: 1.2em;
-  margin-bottom: 5px;
+  font-size: 1.5rem;
   color: var(--text-color);
 }
 .position {
   color: var(--main-color);
-  font-weight: 500;
-  font-size: 0.9em;
+  font-size: 1.3rem;
 }
 @keyframes fadeInUp {
   to {
-      opacity: 1;
-      transform: translateY(0);
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .experiences {
+    padding: 50px 20px;  /* Reduced padding for mobile */
+  }
+  .timeline::before {
+    left: 30px;
+    height: 100%;  /* Make sure line spans full height */
+  }
+  .timeline-item {
+    width: 100%;
+    padding-left: 60px;
+    margin-bottom: 30px;  /* Reduced spacing between items */
+  }
+  .timeline-item:nth-child(odd),
+  .timeline-item:nth-child(even) {
+    float: none;
+    clear: both;
+    transform: none;
+    margin-left: 0;
+  }
+  .timeline-dot {
+    left: -74px !important;  /* Force override for both odd and even items */
+    right: auto;
+    top: 30px;  /* Adjusted to align with content */
+  }
+  .timeline-content {
+    padding: 15px;
+    margin-left: 15px;  /* Add some space from the timeline */
+  }
+  .content-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .content-header img {
+    width: 40px;  /* Smaller images on mobile */
+    height: 40px;
+    padding: 3px;
+  }
+  .company {
+    font-size: 1.2rem;  /* Smaller font size */
+  }
+  .position {
+    font-size: 1rem;  /* Smaller font size */
+  }
+  .timeline-date {
+    font-size: 1.3rem;  /* Smaller font size */
+  }
+  p {
+    font-size: 1rem !important;  /* Ensure readable text size */
+  }
+}
+
+/* Add smaller screen adjustments */
+@media screen and (max-width: 480px) {
+  .experiences {
+    padding: 30px 15px;
+  }
+  .timeline-content {
+    padding: 12px;
+
   }
 }
 /* Responsive Design */
