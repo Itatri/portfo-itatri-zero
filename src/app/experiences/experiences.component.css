@@ -71,6 +71,7 @@
   top: 85px;
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);  /* Changed shadow color to match dot */
   border: 2px solid rgba(255, 255, 255, 0.2);  /* Changed border color to semi-transparent white */
+
 }
 .timeline-item:nth-child(even) .timeline-dot {
   left: -48px;
@@ -176,5 +177,38 @@
   }
   .timeline-content {
     padding: 12px;
+
+  }
+}
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .timeline::before {
+      left: 30px;
+  }
+.timeline-item {
+      width: 100%;
+      padding-left: 60px;
+  }
+.timeline-item:nth-child(odd),
+  .timeline-item:nth-child(even) {
+      float: none;
+      clear: both;
+      transform: none;
+  }
+.timeline-dot {
+      left: 22px;
+      right: auto;
+  }
+.timeline-content {
+      padding: 15px;
+  }
+.content-header {
+      flex-direction: column;
+      align-items: flex-start;
+  }
+  .content-header img {
+      width: 50px;
+      height: 50px;
+      padding: 3px;
   }
 }
