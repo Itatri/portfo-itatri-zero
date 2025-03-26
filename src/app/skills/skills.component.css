@@ -63,6 +63,14 @@
   z-index: 1;
 }
 
+.prev {
+  left: 30px; /* Thêm vị trí cho nút prev */
+}
+
+.next {
+  right: 30px; /* Thêm vị trí cho nút next */
+}
+
 .prev:hover, .next:hover {
   color: var(--main-color);
   transform: scale(1.1);
