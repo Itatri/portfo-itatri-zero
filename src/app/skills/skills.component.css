@@ -1,257 +1,239 @@
-  /* CSS Skills page */
-  .skills {
-    min-height: 50vh;
-    padding: 70px 10%;
-    perspective: 1000px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    overflow: hidden;
+.skills {
+  min-height: 50vh;
+  padding: 70px 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.heading {
+  text-align: center;
+  font-size: 4rem;
+  margin-bottom: 50px;
+}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1200px;
+  width: 90%;
+  position: relative;
+  margin: auto;
+}
+
+.skills-box {
+  padding: 3rem;
+  text-align: center;
+  background: var(--box-component-color);
+  border-radius: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+  max-width: 800px;
+  margin: 0 auto;
+  box-shadow: 0 0 25px rgba(182, 179, 179, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+.skills-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 25px rgba(var(--main-color-rgb), 0.3);
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--main-color);
+}
+
+.custom-icon {
+  width: 80px;
+  height: 80px;
+}
+
+.skills-box h3 {
+  font-size: 2.5rem;
+  margin: 1.5rem 0;
+}
+
+.skills-box p {
+  font-size: 1.8rem;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Responsive Designs */
+/* Large screens */
+@media (min-width: 1400px) {
+  .slideshow-container {
+    max-width: 1400px;
   }
-
-  .heading {
-    text-align: center;
-    font-size: 4rem;
-    margin-bottom: 50px;
-    width: 100%;
-  }
-
-  .carousel-wrapper {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 100px;
-    display: flex;
-    justify-content: center;
-  }
-
-  .skills-navigation {
-    margin-top: 20px;
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    width: 100%;
-  }
-
-  @media (max-width: 480px) {
-    .skills {
-      padding: 50px 5%;
-    }
-
-    .carousel-wrapper {
-      width: 100%;
-      overflow: hidden;
-    }
-  }
-
-  .skills-container {
-    position: relative;
-    width: 300px;
-    height: 400px;
-    margin: 0 auto;
-    transform-style: preserve-3d;
-    transition: transform 0.5s ease;
-  }
-
+  
   .skills-box {
-    position: absolute;
-    width: 250px;
-    height: 300px;
-    padding: 2rem;
-    text-align: center;
-    background: var(--box-component-color);
-    border-radius: 2rem;
-    border: .2rem solid var(--box-component-border);
-    backface-visibility: visible;
-    transition: border-color 0.3s ease;
+    padding: 4rem;
   }
-
-  /* Giảm giá trị translateZ để box gần nhau hơn */
-  .skills-box:nth-child(1) { transform: rotateY(0deg) translateZ(420px); }
-  .skills-box:nth-child(2) { transform: rotateY(36deg) translateZ(420px); }
-  .skills-box:nth-child(3) { transform: rotateY(72deg) translateZ(420px); }
-  .skills-box:nth-child(4) { transform: rotateY(108deg) translateZ(420px); }
-  .skills-box:nth-child(5) { transform: rotateY(144deg) translateZ(420px); }
-  .skills-box:nth-child(6) { transform: rotateY(180deg) translateZ(420px); }
-  .skills-box:nth-child(7) { transform: rotateY(216deg) translateZ(420px); }
-  .skills-box:nth-child(8) { transform: rotateY(252deg) translateZ(420px); }
-  .skills-box:nth-child(9) { transform: rotateY(288deg) translateZ(420px); }
-  .skills-box:nth-child(10) { transform: rotateY(324deg) translateZ(420px); }
-
-  /* Chỉ thay đổi màu viền khi hover */
-  .skills-box:hover {
-    border-color: #6EACDA;
+  
+  .custom-icon {
+    width: 100px;
+    height: 100px;
   }
+}
 
-  .skills-box i {
-
-  /* Desktop */
-  .skills-container {
-    width: 300px;
-    height: 400px;
-  }
-
+/* Medium screens */
+@media (max-width: 992px) {
   .skills-box {
-    width: 250px;
-    height: 300px;
+    padding: 2.5rem;
+    max-width: 600px;
   }
-
-  /* Tablet */
-  @media (max-width: 768px) {
-    .skills-container {
-      width: 250px;
-      height: 350px;
-    }
-
-    .skills-box {
-      width: 200px;
-      height: 250px;
-    }
-
-    .skills-box:nth-child(1) { transform: rotateY(0deg) translateZ(400px); }
-    .skills-box:nth-child(2) { transform: rotateY(36deg) translateZ(400px); }
-    .skills-box:nth-child(3) { transform: rotateY(72deg) translateZ(400px); }
-    .skills-box:nth-child(4) { transform: rotateY(108deg) translateZ(400px); }
-    .skills-box:nth-child(5) { transform: rotateY(144deg) translateZ(400px); }
-    .skills-box:nth-child(6) { transform: rotateY(180deg) translateZ(400px); }
-    .skills-box:nth-child(7) { transform: rotateY(216deg) translateZ(400px); }
-    .skills-box:nth-child(8) { transform: rotateY(252deg) translateZ(400px); }
-    .skills-box:nth-child(9) { transform: rotateY(288deg) translateZ(400px); }
-    .skills-box:nth-child(10) { transform: rotateY(324deg) translateZ(400px); }
+  
+  .custom-icon {
+    width: 70px;
+    height: 70px;
   }
-
-  /* Mobile */
-  @media (max-width: 480px) {
-    .skills-container {
-      width: 200px;
-      height: 300px;
-    }
-
-    .skills-box {
-      width: 150px;
-      height: 200px;
-    }
-
-    .skills-box:nth-child(1) { transform: rotateY(0deg) translateZ(300px); }
-    .skills-box:nth-child(2) { transform: rotateY(36deg) translateZ(300px); }
-    .skills-box:nth-child(3) { transform: rotateY(72deg) translateZ(300px); }
-    .skills-box:nth-child(4) { transform: rotateY(108deg) translateZ(300px); }
-    .skills-box:nth-child(5) { transform: rotateY(144deg) translateZ(300px); }
-    .skills-box:nth-child(6) { transform: rotateY(180deg) translateZ(300px); }
-    .skills-box:nth-child(7) { transform: rotateY(216deg) translateZ(300px); }
-    .skills-box:nth-child(8) { transform: rotateY(252deg) translateZ(300px); }
-    .skills-box:nth-child(9) { transform: rotateY(288deg) translateZ(300px); }
-    .skills-box:nth-child(10) { transform: rotateY(324deg) translateZ(300px); }
-
-    .custom-icon {
-      width: 40px;
-      height: 40px;
-    }
-
-    .skills-box h3 {
-      font-size: 1.8rem;
-    }
-
-    .skills-box p {
-      font-size: 1.4rem;
-    }
-  }
-  }
+  
   .skills-box h3 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
+    font-size: 2.2rem;
   }
-
+  
   .skills-box p {
     font-size: 1.6rem;
-    line-height: 1.6;
   }
+}
 
+/* Small screens */
+@media (max-width: 768px) {
+  .skills-box {
+    padding: 2rem;
+    max-width: 450px;
+  }
+  
   .custom-icon {
     width: 60px;
     height: 60px;
   }
-
-.skills-navigation {
-  margin-top: 20px;
-  display: flex;
-  justify-content: center;
-  gap: 10px;
+  
+  .skills-box h3 {
+    font-size: 2rem;
+  }
+  
+  .skills-box p {
+    font-size: 1.5rem;
+  }
+  
+  .prev, .next {
+    padding: 12px;
+  }
 }
 
-.skills-navigation input[type="radio"] {
-  appearance: none;
-  width: 12px;
-  height: 12px;
-  border: 2px solid #6EACDA;
-  border-radius: 50%;
+/* Extra small screens */
+@media (max-width: 480px) {
+  .skills-box {
+    padding: 1.5rem;
+    max-width: 300px;
+  }
+  
+  .custom-icon {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .skills-box h3 {
+    font-size: 1.8rem;
+    margin: 1rem 0;
+  }
+  
+  .skills-box p {
+    font-size: 1.4rem;
+  }
+  
+  .prev, .next {
+    padding: 8px;
+  }
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Next & previous buttons */
+.prev, .next {
   cursor: pointer;
-  transition: 0.3s;
+  position: absolute;
+  top: 50%;
+  width: 50px;
+  height: 50px;
+  padding: 0;
+  margin-top: -25px;
+  color: #6EACDA;
+  font-weight: bold;
+  font-size: 24px;
+  transition: all 0.3s ease;
+  border-radius: 50%;
+  user-select: none;
+  background: var(--box-component-color);
+  border: 2px solid #6EACDA;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 8px rgba(110, 172, 218, 0.2);
 }
 
-.skills-navigation input[type="radio"]:checked {
+.prev:hover, .next:hover {
+  background-color: #6EACDA;
+  color: white;
+  transform: scale(1.1);
+  box-shadow: 0 6px 12px rgba(110, 172, 218, 0.3);
+}
+
+.prev {
+  left: -25px;
+}
+
+.next {
+  right: -25px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .prev, .next {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .prev, .next {
+    width: 35px;
+    height: 35px;
+    font-size: 18px;
+  }
+}
+
+/* The dots/bullets/indicators */
+.dots {
+  text-align: center;
+  padding: 20px;
+}
+
+.dot {
+  cursor: pointer;
+  height: 12px;
+  width: 12px;
+  margin: 0 5px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
   background-color: #6EACDA;
 }
 
-.skills-container {
-  transition: transform 0.5s ease;
-}
-  .carousel-controls {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-    position: relative;
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-
-  .arrow-btn {
-    font-size: 24px;
-    width: 50px;
-    height: 50px;
-    border: none;
-    background: var(--box-component-color);
-    color: #6EACDA;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: 0.3s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-140%);
-  }
-
-  .arrow-btn:hover {
-    background: #6EACDA;
-    color: white;
-    transform: translateY(-140%) scale(1.1);
-  }
-
-  .arrow-btn i {
-    font-size: 20px;
-  }
-
-  .arrow-btn.prev {
-    left: -100px;
-  }
-
-  .arrow-btn.next {
-    right: -100px;
-  }
-
-@media (max-width: 1050px) {
-  .arrow-btn {
-    display: none;
-  }
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
 }
 
-@media (min-width: 1212px) {
-  .carousel-controls {
-    padding: 0 100px;
-  }
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
 }

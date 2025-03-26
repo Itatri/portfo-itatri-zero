@@ -10,69 +10,60 @@ import { ThemeService } from '../services/theme.service';
   providers: [ThemeService]
 })
 export class SkillsComponent {
+  selectedSkillIndex = 0;
+  totalSkills = 10;
 
-        isRotating = true;
-        rotationSpeed = 50;
-        selectedSkillIndex = 0;
-        totalSkills = 10;
+  constructor(private themeService: ThemeService) {}
 
-        touchStartX = 0;
-        touchEndX = 0;
+  get isDarkTheme() {
+    return this.themeService.isDarkTheme$;
+  }
 
-        constructor(private themeService: ThemeService) {}
-        // Theme toggle Dark/Light
-        get isDarkTheme() {
-          return this.themeService.isDarkTheme$;
-        }
+  toggleTheme() {
+    this.themeService.toggleTheme();
+  }
 
-        toggleTheme() {
-          this.themeService.toggleTheme();
-        }
+  selectSkill(index: number) {
+    this.selectedSkillIndex = index;
+  }
 
-         // Event for roll skills-container
-        selectSkill(index: number) {
-          this.selectedSkillIndex = index;
-          const container = document.querySelector('.skills-container') as HTMLElement;
-          const rotation = 36 * index; // 360/10 = 36 độ cho mỗi box
-          container.style.transform = `rotateY(-${rotation}deg)`;
-        }
+  prevSkill() {
+    this.selectedSkillIndex = (this.selectedSkillIndex - 1 + this.totalSkills) % this.totalSkills;
+  }
 
-        private rotateToSkill() {
-          const container = document.querySelector('.skills-container') as HTMLElement;
-          const rotation = 36 * this.selectedSkillIndex; // 360/10 = 36 độ cho mỗi box
-          container.style.transform = `rotateY(-${rotation}deg)`;
-        }
+  nextSkill() {
+    this.selectedSkillIndex = (this.selectedSkillIndex + 1) % this.totalSkills;
+  }
 
-        prevSkill() {
-          this.selectedSkillIndex = (this.selectedSkillIndex - 1 + this.totalSkills) % this.totalSkills;
-          this.rotateToSkill();
-        }
+  getSkillImage(index: number): string {
+    const images = [
+      'HTML.png', 'CSS.png', 'Boostrap.png', 'Net.png', 'Javascript.png',
+      'SQLServer.png', 'github-logo.png', 'postman.png', 'mongodb.png', 'Figma.png'
+    ];
+    return `assets/Icons/${images[index]}`;
+  }
 
-        nextSkill() {
-          this.selectedSkillIndex = (this.selectedSkillIndex + 1) % this.totalSkills;
-          this.rotateToSkill();
-        }
+  getSkillTitle(index: number): string {
+    const titles = [
+      'HTML', 'CSS', 'Bootstrap', '.NET', 'JavaScript',
+      'SQL Server', 'Github', 'Postman', 'MongoDB', 'Figma'
+    ];
+    return titles[index];
+  }
 
-
-        handleTouchStart(event: TouchEvent) {
-          this.touchStartX = event.touches[0].clientX;
-        }
-
-        handleTouchEnd(event: TouchEvent) {
-          this.touchEndX = event.changedTouches[0].clientX;
-          this.handleSwipe();
-        }
-
-        private handleSwipe() {
-          const swipeThreshold = 50;
-          const diff = this.touchEndX - this.touchStartX;
-
-          if (Math.abs(diff) > swipeThreshold) {
-            if (diff > 0) {
-              this.prevSkill();
-            } else {
-              this.nextSkill();
-            }
-          }
-        }
+  getSkillDescription(index: number): string {
+    const descriptions = [
+      'Basic knowledge of HTML tags and structure for web development.',
+      'Basic understanding of CSS for creating and styling user interfaces.',
+      'Understanding of the Bootstrap framework for responsive web design.',
+      'Experience in building Web API, Web MVC and Winform applications.',
+      'Knowledge of JavaScript for UI interactions and API integration.',
+      'Have basic knowledge of building and administering SQL Server databases.',
+      'Basic skills in version control and collaborative software development.',
+      'Basic knowledge of API testing using Postman.',
+      'Basic understanding of NoSQL database concepts and operations.',
+      'Introductory skills in UI/UX design and creating prototypes.'
+    ];
+    return descriptions[index];
+  }
 }
