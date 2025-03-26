@@ -8,15 +8,13 @@
     <!-- Skill slides -->
     <div class="mySlides fade" *ngFor="let i of [0,1,2,3,4,5,6,7,8,9]" [style.display]="selectedSkillIndex === i ? 'block' : 'none'">
       <div class="skills-box">
+        <button class="prev" (click)="prevSkill()">❮</button>
         <img [src]="getSkillImage(i)" [alt]="getSkillTitle(i)" class="custom-icon">
         <h3>{{getSkillTitle(i)}}</h3>
         <p>{{getSkillDescription(i)}}</p>
+        <button class="next" (click)="nextSkill()">❯</button>
       </div>
     </div>
-
-    <!-- Next and previous buttons -->
-    <button class="prev" (click)="prevSkill()">❮</button>
-    <button class="next" (click)="nextSkill()">❯</button>
   </div>
 
   <!-- The dots/circles -->
