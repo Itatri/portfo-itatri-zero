@@ -3,89 +3,26 @@
 <section class="skills" id="skills">
   <h2 class="heading">My <span>Skills</span></h2>
 
-  <div class="carousel-controls">
-    <button class="arrow-btn prev" (click)="prevSkill()">
-      <i class="fas fa-chevron-left"></i>
-    </button>
-    <div class="skills-container"
-    (touchstart)="handleTouchStart($event)"
-    (touchend)="handleTouchEnd($event)">
-
+  <!-- Slideshow container -->
+  <div class="slideshow-container">
+    <!-- Skill slides -->
+    <div class="mySlides fade" *ngFor="let i of [0,1,2,3,4,5,6,7,8,9]" [style.display]="selectedSkillIndex === i ? 'block' : 'none'">
       <div class="skills-box">
-          <img src="assets/Icons/HTML.png" alt="HTML" class="custom-icon">
-          <h3>HTML</h3>
-          <p>Basic knowledge of HTML tags and structure for web development.</p>
-      </div>
-
-      <div class="skills-box">
-          <img src="assets/Icons/CSS.png" alt="CSS" class="custom-icon">
-          <h3>CSS</h3>
-          <p>Basic understanding of CSS for creating and styling user interfaces.</p>
-      </div>
-
-      <div class="skills-box">
-          <img src="assets/Icons/Boostrap.png" alt="Bootstrap" class="custom-icon">
-          <h3>Bootstrap</h3>
-          <p>Understanding of the Bootstrap framework for responsive web design.</p>
-      </div>
-
-      <div class="skills-box">
-          <img src="assets/Icons/Net.png" alt="NET" class="custom-icon">
-          <h3>.NET</h3>
-          <p>Experience in building Web API, Web MVC and Winform applications.</p>
-      </div>
-
-      <div class="skills-box">
-          <img src="assets/Icons/Javascript.png" alt="JavaScript" class="custom-icon">
-          <h3>JavaScript</h3>
-          <p>Knowledge of JavaScript for UI interactions and API integration.</p>
-      </div>
-
-      <div class="skills-box">
-          <img src="assets/Icons/SQLServer.png" alt="SQLServer" class="custom-icon">
-          <h3>SQL Server</h3>
-          <p>Have basic knowledge of building and administering SQL Server databases.</p>
-      </div>
-
-      <div class="skills-box">
-          <img src="assets/Icons/github-logo.png" alt="Github" class="custom-icon">
-          <h3>Github</h3>
-          <p>Basic skills in version control and collaborative software development.</p>
-      </div>
-
-      <div class="skills-box">
-          <img src="assets/Icons/postman.png" alt="Postman" class="custom-icon">
-          <h3>Postman</h3>
-          <p>Basic knowledge of API testing using Postman.</p>
-      </div>
-
-      <div class="skills-box">
-          <img src="assets/Icons/mongodb.png" alt="MongoDB" class="custom-icon">
-          <h3>MongoDB</h3>
-          <p>Basic understanding of NoSQL database concepts and operations.</p>
-      </div>
-
-      <div class="skills-box">
-          <img src="assets/Icons/Figma.png" alt="Figma" class="custom-icon">
-          <h3>Figma</h3>
-          <p>Introductory skills in UI/UX design and creating prototypes.</p>
+        <img [src]="getSkillImage(i)" [alt]="getSkillTitle(i)" class="custom-icon">
+        <h3>{{getSkillTitle(i)}}</h3>
+        <p>{{getSkillDescription(i)}}</p>
       </div>
     </div>
-    <button class="arrow-btn next" (click)="nextSkill()">
-    <i class="fas fa-chevron-right"></i>
-  </button>
+
+    <!-- Next and previous buttons -->
+    <button class="prev" (click)="prevSkill()">❮</button>
+    <button class="next" (click)="nextSkill()">❯</button>
   </div>
 
-  <div class="skills-navigation">
-    <input type="radio" name="skill" [checked]="selectedSkillIndex === 0" (change)="selectSkill(0)" id="skill0">
-    <input type="radio" name="skill" [checked]="selectedSkillIndex === 1" (change)="selectSkill(1)" id="skill1">
-    <input type="radio" name="skill" [checked]="selectedSkillIndex === 2" (change)="selectSkill(2)" id="skill2">
-    <input type="radio" name="skill" [checked]="selectedSkillIndex === 3" (change)="selectSkill(3)" id="skill3">
-    <input type="radio" name="skill" [checked]="selectedSkillIndex === 4" (change)="selectSkill(4)" id="skill4">
-    <input type="radio" name="skill" [checked]="selectedSkillIndex === 5" (change)="selectSkill(5)" id="skill5">
-    <input type="radio" name="skill" [checked]="selectedSkillIndex === 6" (change)="selectSkill(6)" id="skill6">
-    <input type="radio" name="skill" [checked]="selectedSkillIndex === 7" (change)="selectSkill(7)" id="skill7">
-    <input type="radio" name="skill" [checked]="selectedSkillIndex === 8" (change)="selectSkill(8)" id="skill8">
-    <input type="radio" name="skill" [checked]="selectedSkillIndex === 9" (change)="selectSkill(9)" id="skill9">
+  <!-- The dots/circles -->
+  <div class="dots">
+    <span class="dot" *ngFor="let i of [0,1,2,3,4,5,6,7,8,9]" 
+          [class.active]="selectedSkillIndex === i"
+          (click)="selectSkill(i)"></span>
   </div>
 </section>
