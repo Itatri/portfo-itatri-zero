@@ -16,15 +16,15 @@ export class HomeComponent {
     const socialIcons = document.querySelector('.social-icons') as HTMLElement;
     const contactBtn = document.querySelector('.btn') as HTMLElement;
     
-    // Remove any existing active classes first
+    // Remove existing active states
     socialIcons.classList.remove('active');
     contactBtn.classList.remove('active');
     
-    // Force a reflow to ensure the removal takes effect
+    // Force reflow
     void socialIcons.offsetWidth;
     void contactBtn.offsetWidth;
     
-    // Add active classes
+    // Add active states
     socialIcons.classList.add('active');
     contactBtn.classList.add('active');
 
