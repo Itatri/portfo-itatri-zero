@@ -14,10 +14,14 @@ export class HomeComponent {
   // Sự kiện nhấn nút Contact
   showSocialIcons() {
     const socialIcons = document.querySelector('.social-icons') as HTMLElement;
+    const contactBtn = document.querySelector('.btn') as HTMLElement;
+    
     socialIcons.classList.add('active');
+    contactBtn.classList.add('active');
 
     setTimeout(() => {
       socialIcons.classList.remove('active');
+      contactBtn.classList.remove('active');
     }, 2000);
   }
 

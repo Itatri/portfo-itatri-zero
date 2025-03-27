@@ -90,6 +90,16 @@ body {
     border-color: var(--main-color);
 }
 
+.btn.active {
+    box-shadow: 0 8px 25px rgba(110, 172, 218, 0.5);
+    transform: translateY(-5px) scale(1.03);
+    border-color: var(--main-color);
+}
+
+.btn.active::before {
+    width: 100%;
+}
+
 .btn::before {
     content: '';
     position: absolute;
