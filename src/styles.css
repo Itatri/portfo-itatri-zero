@@ -84,32 +84,10 @@ body {
     z-index: 1;
 }
 
-.btn:hover {
+.btn:hover, .btn.active {
     box-shadow: 0 8px 25px rgba(110, 172, 218, 0.5);
     transform: translateY(-5px) scale(1.03);
     border-color: var(--main-color);
-}
-
-@media (max-width: 768px) {
-    .btn.active {
-        box-shadow: 0 8px 25px rgba(110, 172, 218, 0.5);
-        transform: translateY(-5px) scale(1.03);
-        border-color: var(--main-color);
-    }
-
-    .btn.active::before {
-        width: 100%;
-    }
-
-    /* Reset hover effects on mobile to prevent sticky states */
-    .btn:hover {
-        box-shadow: none;
-        transform: none;
-    }
-
-    .btn:hover::before {
-        width: 0;
-    }
 }
 
 .btn::before {
@@ -124,8 +102,29 @@ body {
     z-index: -1;
 }
 
-.btn:hover::before {
+.btn:hover::before, .btn.active::before {
     width: 100%;
+}
+
+@media (max-width: 768px) {
+    .btn:hover {
+        box-shadow: none;
+        transform: none;
+    }
+
+    .btn:hover::before {
+        width: 0;
+    }
+
+    .btn.active {
+        box-shadow: 0 8px 25px rgba(110, 172, 218, 0.5);
+        transform: translateY(-5px) scale(1.03);
+        border-color: var(--main-color);
+    }
+
+    .btn.active::before {
+        width: 100%;
+    }
 }
 
 
